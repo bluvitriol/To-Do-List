@@ -29,7 +29,7 @@ addToDoButton.addEventListener('click', function() {
     });
 
     editButton.addEventListener('click', function() {
-        let newText = prompt("Edit your to-do item:", paragraph.innerText);
+        let newText = prompt("Edit item:", paragraph.innerText);
         if (newText !== null && newText.trim() !== "") {
             paragraph.innerText = newText;
         }
