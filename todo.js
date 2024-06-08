@@ -2,7 +2,7 @@ let addToDoButton = document.getElementById('addToDo');
 let toDoContainer = document.getElementById('toDoContainer');
 let inputField = document.getElementById('inputField');
 
-addToDoButton.addEventListener('click', function(){
+addToDoButton.addEventListener('click', function() {
     var paragraph = document.createElement('p');
     paragraph.classList.add('paragraph-styling');
     paragraph.innerText = inputField.value;
@@ -10,9 +10,7 @@ addToDoButton.addEventListener('click', function(){
     var editButton = document.createElement('button');
     editButton.innerText = 'Edit';
     editButton.classList.add('edit-button-styling');
-
-    // toDoContainer.appendChild(paragraph);
-
+    
     var toDoItemContainer = document.createElement('div');
     toDoItemContainer.classList.add('to-do-item-container');
     toDoItemContainer.appendChild(paragraph);
@@ -21,20 +19,28 @@ addToDoButton.addEventListener('click', function(){
     toDoContainer.appendChild(toDoItemContainer);
 
     inputField.value = "";
-    paragraph.addEventListener('click', function(){
+
+    paragraph.addEventListener('click', function() {
         paragraph.style.textDecoration = "line-through";
-    })
-    paragraph.addEventListener('dblclick', function(){
-        toDoContainer.removeChild(paragraph);
-    })
+    });
+
+    paragraph.addEventListener('dblclick', function() {
+        toDoContainer.removeChild(toDoItemContainer);
+    });
 
     editButton.addEventListener('click', function() {
-        let newText = prompt("Edit item:", paragraph.innerText);
+        let newText = prompt("Edit your to-do item:", paragraph.innerText);
         if (newText !== null && newText.trim() !== "") {
             paragraph.innerText = newText;
         }
     });
-})
+});
+
+
+
+
+
+
 
 
 
